@@ -19,17 +19,23 @@ export class AuthenticationService {
   }
  
   checkToken() {
-    this.storage.get(TOKEN_KEY).then(res => {
-      if (res) {
+    return this.storage.get(TOKEN_KEY).then(res => {
+      if(res){
         this.authenticationState.next(true);
       }
-    })
+    });
   }
  
   login() {
-    return this.storage.set(TOKEN_KEY, 'Bearer 1234567').then(() => {
-      this.authenticationState.next(true);
-    });
+
+
+    let tokenSecure = this.storage.set(TOKEN_KEY, 'ApiKey');
+
+    //logica Microservicio
+
+    // return this.storage.set(TOKEN_KEY, 'ApiKey').then(res => {
+    //   this.authenticationState.next(true);
+    // });
   }
  
   logout() {

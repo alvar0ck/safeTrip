@@ -7,7 +7,7 @@ import { AuthenticationService } from './authentication.service';
 })
 export class AuthGuardService implements CanActivate {
  
-  constructor(public auth: AuthenticationService) {}
+  constructor(private auth: AuthenticationService) {}
  
   canActivate(): boolean {
     return this.auth.isAuthenticated();
