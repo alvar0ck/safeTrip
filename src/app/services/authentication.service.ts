@@ -57,7 +57,7 @@ export class AuthenticationService {
     });
   }
  
-  // login(username, password) {
+  //login(username, password) {
 
   //   let tokenSecure = this.storage.set(TOKEN_KEY, 'tokenKey');
   //   return this.storage.set(TOKEN_KEY, 'ApiKey').then(res => {
@@ -76,6 +76,9 @@ export class AuthenticationService {
     return this.authenticationState.next(true);
   }
 
+  getId(id){
+    return this.parentsCollection.doc<ParentsLogin>(id).valueChanges();
+  }
 
   logout() {
     return this.storage.remove(TOKEN_KEY).then(() => {

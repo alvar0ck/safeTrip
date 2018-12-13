@@ -5,6 +5,15 @@
 </ion-header>
  
 <ion-content padding>
-  <ion-button (click)="login()" expand="block">Login</ion-button>
+
+  <ion-list lines="full">
+    <ion-item>
+        <ion-input required type="text" placeholder="Username" [(ngModel)]="parents.username"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="login()">Login</ion-button>
+
+  
+  
   <ion-button expand="block" color="secondary" routerLink="/register" routerDirection="forward">Register</ion-button>
 </ion-content>
