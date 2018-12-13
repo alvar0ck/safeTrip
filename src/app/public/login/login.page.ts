@@ -1,4 +1,4 @@
-import { AuthenticationService } from './../../services/authentication.service';
+import { AuthenticationService, ParentsLogin } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
  
 @Component({
@@ -11,10 +11,13 @@ export class LoginPage implements OnInit {
   constructor(private authService: AuthenticationService) { }
  
   ngOnInit() {
+
   }
  
   login() {
     this.authService.login();
   }
+
+  
  
 }
