@@ -57,21 +57,6 @@ export class AuthenticationService {
     });
   }
  
-  //login(username, password) {
-
-  //   let tokenSecure = this.storage.set(TOKEN_KEY, 'tokenKey');
-  //   return this.storage.set(TOKEN_KEY, 'ApiKey').then(res => {
-  //   let user = this.parentsCollection.doc<ParentsLogin>(username).valueChanges();
-  //   let pass = this.parentsCollection.doc<ParentsLogin>(password).valueChanges();
-
-  //   for(let item in this.parentsList){
-  //       if( this.parentsList[item].username == user && this.parentsList[item].password == pass){
-  //         this.authenticationState.next(true);
-  //       }
-  //   }  
-  //   });
-  // }
- 
   login(){
     return this.authenticationState.next(true);
   }
@@ -92,6 +77,10 @@ export class AuthenticationService {
 
   registerParents(parentlist: ParentsLogin){
     return this.parentsCollection.add(parentlist);
+  }
+
+  getParentsList(){
+    return this.parentsList;
   }
  
 }
